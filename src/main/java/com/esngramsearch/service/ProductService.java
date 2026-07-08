@@ -9,6 +9,7 @@ import org.springframework.data.elasticsearch.core.SearchHit;
 import org.springframework.data.elasticsearch.core.SearchHits;
 import org.springframework.stereotype.Service;
 
+import com.esngramsearch.exception.ProductNotFoundException;
 import com.esngramsearch.model.Product;
 import com.esngramsearch.repository.ProductRepository;
 
@@ -34,8 +35,7 @@ public class ProductService {
                         .query(keyword)
                         .fields("name^3", "brand") // Boosting Name relevancy over brand
                         .fuzziness("AUTO") // Allows minor typos
-                )
-        );
+                ));
 
         NativeQuery nativeQuery = NativeQuery.builder()
                 .withQuery(multiMatchQuery)
@@ -46,5 +46,10 @@ public class ProductService {
         return searchHits.getSearchHits().stream()
                 .map(SearchHit::getContent)
                 .collect(Collectors.toList());
+    }
+
+    public Product getProductById(String id) {
+        return productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException(id));
     }
 }
