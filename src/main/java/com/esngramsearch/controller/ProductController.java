@@ -26,4 +26,10 @@ public class ProductController {
     public ResponseEntity<List<Product>> getSuggestions(@RequestParam String query) {
         return ResponseEntity.ok(productService.suggestProducts(query));
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Product> getProductById(@PathVariable String id) {
+        Product product = productService.getProductById(id);
+        return ResponseEntity.ok(product);
+    }
 }
