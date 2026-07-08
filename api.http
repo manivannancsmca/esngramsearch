@@ -64,9 +64,9 @@ GET http://localhost:8081/api/v1/products/suggest?query=iphoe
 Accept: application/json
 
 ### 9. Get Product By ID (Replace YOUR_PRODUCT_ID with an actual ID from an creation response)
-GET http://localhost:8081/api/v1/products/1
+GET http://localhost:8081/api/v1/products/ijnoQp8BSF6R83XycfkE
 Accept: application/json
 
 ### 10. Get Product By ID - Missing Data Test (Should return 404 Not Found)
-GET http://localhost:8081/api/v1/products/5
+GET http://localhost:8081/api/v1/products/aaabbb
 Accept: application/json
