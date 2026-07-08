@@ -1,3 +1,13 @@
+server:
+  port:  8081
+
 spring:
   application:
     name: esngramsearch
+
+  elasticsearch:
+    uris: http://localhost:9200
+    # username: test (uncomment for production)
+    # password: tes (uncomment for production)
+    connection-timeout: 5s
+    socket-timeout: 3s
