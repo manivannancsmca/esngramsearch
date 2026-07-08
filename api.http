@@ -1,5 +1,5 @@
 ### 1. Create Product 1 (iPhone 15 Pro)
-POST http://localhost:8081/api/products
+POST http://localhost:8081/api/v1/products
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### 2. Create Product 2 (Samsung Galaxy S24)
-POST http://localhost:8081/api/products
+POST http://localhost:8081/api/v1/products
 Content-Type: application/json
 
 {
@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 
 ### 3. Create Product 3 (iPad Pro)
-POST http://localhost:8081/api/products
+POST http://localhost:8081/api/v1/products
 Content-Type: application/json
 
 {
@@ -35,7 +35,7 @@ Content-Type: application/json
 }
 
 ### 4. Create Product 4 (Nike Air Max)
-POST http://localhost:8081/api/products
+POST http://localhost:8081/api/v1/products
 Content-Type: application/json
 
 {
@@ -48,17 +48,17 @@ Content-Type: application/json
 
 
 ### 5. Test NGram Search - Typing 'iph' (Should match iPhone)
-GET http://localhost:8081/api/products/suggest?query=iph
+GET http://localhost:8081/api/v1/products/suggest?query=iph
 Accept: application/json
 
 ### 6. Test NGram Search - Typing 'sam' (Should match Samsung)
-GET http://localhost:8081/api/products/suggest?query=sam
+GET http://localhost:8081/api/v1/products/suggest?query=sam
 Accept: application/json
 
 ### 7. Test NGram Search - Typing 'nik' (Should match Nike)
-GET http://localhost:8081/api/products/suggest?query=nik
+GET http://localhost:8081/api/v1/products/suggest?query=nik
 Accept: application/json
 
 ### 8. Test NGram Search with Typo - Typing 'iphoe' (Fuzzy match should find iPhone)
-GET http://localhost:8081/api/products/suggest?query=iphoe
+GET http://localhost:8081/api/v1/products/suggest?query=iphoe
 Accept: application/json
